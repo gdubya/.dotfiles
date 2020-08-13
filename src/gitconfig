@@ -1,14 +1,13 @@
 [user]
-	name = Niels Henrik Hagen
-	email = nhhagen@gmail.com
-	signingkey = 786F7BDDD850DE40
+	name = Gareth Western
+	email = gareth@garethwestern.com
 [color]
 	ui = auto
 	ui = true
 [core]
 	autocrlf = input
 	editor = vim
-	excludesfile = /Users/niels.hagen/.gitignore_global
+	excludesfile = /Users/garwes/.gitignore_global
 [pull]
 	rebase = true
 [push]

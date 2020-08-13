@@ -18,14 +18,16 @@ BREW := /usr/local/bin/brew
 BREW_TAPS := \
 	github/homebrew-gh \
 	goles/homebrew-battery \
-	teamookla/homebrew-speedtest
+	teamookla/homebrew-speedtest \
+	homebrew/homebrew-cask
 
 BREW_TAPS_PATH := /usr/local/Homebrew/Library/Taps
 PREDEF_BREW_TAPS := $(addprefix $(BREW_TAPS_PATH)/,$(BREW_TAPS))
 
 BREW_FORMULAS := \
 	ack \
-	battery \
+	azure-cli \
+        battery \
 	cookiecutter \
 	docker \
 	docker-machine \
@@ -36,6 +38,7 @@ BREW_FORMULAS := \
 	gnupg \
 	httpie \
 	jq \
+	kubectl \
 	make \
 	node \
 	pyenv \
@@ -59,14 +62,11 @@ BREW_FORMULAS := \
 BREW_FORMULAS_PATHS := $(addprefix /usr/local/Cellar/,$(BREW_FORMULAS))
 
 BREW_CASKS := \
-	1password \
-	google-backup-and-sync \
 	google-chrome \
 	iterm2 \
 	keybase \
-	slack \
 	spotify \
-	virtualbox
+	visual-studio-code
 
 BREW_CASKS_PATHS := $(addprefix /usr/local/Caskroom/,$(BREW_CASKS))
 
@@ -106,6 +106,7 @@ $(BREW): |/Library/Developer/CommandLineTools
 brew-update: |$(BREW)
 	$(BREW) update
 
+brew-tap: $(PREDEF_BREW_TAPS)
 $(PREDEF_BREW_TAPS): |$(BREW)
 	$(BREW) tap $(shell echo $@ | sed -e "s|$(BREW_TAPS_PATH)/\(.*\)/homebrew-\(.*\)|\1/\2|")
 
@@ -115,7 +116,7 @@ $(BREW_FORMULAS_PATHS): |$(BREW) $(PREDEF_BREW_TAPS)
 	$(BREW) install $(patsubst .%,%,$(notdir $@))
 
 $(BREW_CASKS_PATHS): |$(BREW)
-	$(BREW) cask install -f $(patsubst .%,%,$(notdir $@))
+	$(BREW) cask install $(patsubst .%,%,$(notdir $@))
 
 gem-install: $(GEMS)
 $(GEMS): |$(BREW_FORMULAS_PATHS)

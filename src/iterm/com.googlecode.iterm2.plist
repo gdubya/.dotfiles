@@ -1589,7 +1589,7 @@
 			<key>Window Type</key>
 			<integer>13</integer>
 			<key>Working Directory</key>
-			<string>/Users/niels.hagen</string>
+			<string>/Users/garwes</string>
 		</dict>
 		<dict>
 			<key>ASCII Anti Aliased</key>
@@ -2408,7 +2408,7 @@
 			<key>Window Type</key>
 			<integer>0</integer>
 			<key>Working Directory</key>
-			<string>/Users/niels.hagen</string>
+			<string>/Users/garwes</string>
 		</dict>
 	</array>
 	<key>NoSyncAllAppVersions</key>
@@ -3224,7 +3224,7 @@
 		</dict>
 	</dict>
 	<key>PrefsCustomFolder</key>
-	<string>/Users/niels.hagen/.dotfiles/iterm</string>
+	<string>/Users/garwes/.dotfiles/iterm</string>
 	<key>PromptOnClose</key>
 	<true/>
 	<key>PromptOnQuit</key>
