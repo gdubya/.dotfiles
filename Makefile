@@ -29,6 +29,7 @@ BREW_FORMULAS := \
 	azure-cli \
         battery \
 	cookiecutter \
+        composer \
 	docker \
 	docker-machine \
 	git \
@@ -54,6 +55,7 @@ BREW_FORMULAS := \
 	tree \
 	vaulted \
 	vim \
+        watch \
 	wget \
 	zsh \
 	zsh-completions \
