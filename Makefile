@@ -39,6 +39,7 @@ BREW_FORMULAS := \
 	gnupg \
 	httpie \
 	jq \
+        jenv \
 	kubectl \
 	make \
 	node \
@@ -64,8 +65,10 @@ BREW_FORMULAS := \
 BREW_FORMULAS_PATHS := $(addprefix /usr/local/Cellar/,$(BREW_FORMULAS))
 
 BREW_CASKS := \
+        dbeaver-community \
 	google-chrome \
-	iterm2 \
+	intellij-idea \
+        iterm2 \
 	keybase \
 	spotify \
 	visual-studio-code
